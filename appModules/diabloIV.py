@@ -3,6 +3,11 @@ import speech
 from logHandler import log
 import html
 
+replacements={
+	"[MARKED AS JUNK].":"[junk]",
+	"[FAVORITED ITEM].":"[favorited]
+}
+
 class AppModule(appModuleHandler.AppModule):
 	def __init__(self, processID, appName=None):
 		super().__init__(processID, appName)
@@ -18,6 +23,9 @@ class AppModule(appModuleHandler.AppModule):
 				if item == 'blank':
 					item=''
 				item=html.unescape(item)
+				for text, replacement in replacements.items():
+					if text in item:
+						item=item.replace(text, replacement)
 			newSeq.append(item)
 		return self.originalSpeak(newSeq, *args, **kwargs)
 	def event_loseFocus(self, obj, nextHandler):
