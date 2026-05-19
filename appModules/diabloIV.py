@@ -5,7 +5,7 @@ import html
 
 replacements={
 	"[MARKED AS JUNK].":"[junk]",
-	"[FAVORITED ITEM].":"[favorited]
+	"[FAVORITED ITEM].":"[favorited]"
 }
 
 class AppModule(appModuleHandler.AppModule):
