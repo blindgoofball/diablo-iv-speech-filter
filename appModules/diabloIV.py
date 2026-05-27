@@ -5,7 +5,8 @@ import html
 
 replacements={
 	"[MARKED AS JUNK].":"[junk]",
-	"[FAVORITED ITEM].":"[favorited]"
+	"[FAVORITED ITEM].":"[favorited]",
+	"Reward: Materials used in the Horadric Cube ": ""
 }
 
 class AppModule(appModuleHandler.AppModule):
